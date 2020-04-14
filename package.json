@@ -4,8 +4,8 @@
   "description": "![Design preview for the Single Price Grid Component coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch src:styles",
-    "build": "sass src:styles"
+    "watch": "sass --watch styles:public",
+    "build": "sass styles:public"
   },
   "repository": {
     "type": "git",
