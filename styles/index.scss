@@ -1,115 +1,159 @@
-$cyan: hsl(179, 62%, 43%);
-$cyan-lighter: hsl(179, 62%, 43%, 70%);
-$light-grey: hsl(204, 43%, 93%);
-$white: hsl(0, 200%, 100%);
-$bright-green: hsl(71, 73%, 54%);
-$grayishblue: hsl(218, 22%, 67%);
-$border-radius: 5px;
-
 @import url(https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap);
 
-body {
-  background-color: $light-grey;
-  font-family: "Karla", sans-serif;
-}
+/*COLOURS*/
+$CYAN: hsl(179, 62%, 43%);
+$CYAN-LIGHTER: hsl(179, 62%, 43%, 70%);
+$LIGHT-GREY: hsl(204, 43%, 93%);
+$WHITE: hsl(0, 200%, 100%);
+$BRIGHT-GREEN: hsl(71, 73%, 54%);
+$DARK-GREEN: hsl(71, 83%, 40%);
+$GREY-BLUE: hsl(218, 22%, 67%);
+$BORDER-RADIUS: 8px;
 
 /*GRID LAYOUT*/
-
 .component-container {
-  border-radius: $border-radius;
-  margin: 5%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  justify-content: center;
-  box-shadow: 0px 3px 38px -6px rgba(140, 142, 143, 0.71);
+  margin: auto;
+  width: 95%;
+  background: $LIGHT-GREY;
 }
 .header-box {
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
-  background-color: $white;
+  box-shadow: 0px 5px 35px -6px rgba(140, 142, 143, 0.71);
+  border-top-left-radius: $BORDER-RADIUS;
+  border-top-right-radius: $BORDER-RADIUS;
+  background-color: $WHITE;
 }
 .two-box-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
-.box-padding {
-  padding: 25px;
-}
 
+/*BOX STYLING*/
+body {
+  background-color: $LIGHT-GREY;
+  font-family: "Karla", sans-serif;
+}
+.box-padding {
+  padding: 10px 25px 10px 25px;
+}
 .small-box-1 {
-  // display: grid;
-  // grid-template-rows: repeat(1fr);
-  background-color: $cyan;
+  background-color: $CYAN;
+  box-shadow: 0px 10px 35px -6px rgba(140, 142, 143, 0.71);
 }
 .small-box-2 {
-  border-bottom-right-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
-  background-color: $cyan-lighter;
-}
-.sign-up-button {
-  font-weight: bold;
-  font-size: 16px;
-  width: 100%;
-  margin-top: 22px;
-  padding: 12px;
-  border-radius: 5px;
-  box-shadow: 1px 8px 8px 1px rgba(79, 82, 82, 0.2);
-  background-color: $bright-green;
-}
-
-/*FONT STYLES*/
-.white-font {
-  color: $white;
-}
-
-.header-box-title {
-  font-weight: bold;
-  color: $cyan;
-}
-.header-box-subtitle {
-  font-weight: bold;
-  color: $bright-green;
-}
-.header-box-text {
-  color: $grayishblue;
-}
-.pricing {
-  opacity: 1;
-  font-size: 26px;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-.subtitle-font {
-  font-weight: bold;
-  opacity: 1;
-}
-p {
-  font-weight: 100;
-  font-size: 16px;
+  border-bottom-right-radius: $BORDER-RADIUS;
+  border-bottom-left-radius: $BORDER-RADIUS;
+  background-color: $CYAN-LIGHTER;
+  box-shadow: 0px 10px 35px -6px rgba(140, 142, 143, 0.71);
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
-.light-text {
-  opacity: 0.7;
-  font-size: 16px;
-  font-weight: 100;
+.sign-up-button {
+  width: 100%;
+  margin-top: 22px;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 1px 8px 8px 1px rgba(79, 82, 82, 0.2);
+  background-color: $BRIGHT-GREEN;
 }
 
-@media (min-width: 320px) {
+/*FONT STYLES*/
+.white-font {
+  color: $WHITE;
+}
+.cyan-font {
+  color: $CYAN;
+}
+.green-font {
+  color: $BRIGHT-GREEN;
+}
+.grey-blue-font {
+  color: $GREY-BLUE;
+}
+.pricing {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+.normal-font-size {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.opaque-font {
+  opacity: 1;
+}
+.transparent-font {
+  opacity: 0.7;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+/*FOR NON-MOBILE SCREENS*/
+@media (min-width: 415px) {
   .small-box-1 {
-    border-bottom-left-radius: $border-radius;
+    border-bottom-left-radius: $BORDER-RADIUS;
   }
   .small-box-2 {
-    border-bottom-right-radius: $border-radius;
+    border-bottom-right-radius: $BORDER-RADIUS;
     border-bottom-left-radius: 0;
   }
   .component-container {
     margin: 0;
     position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-25%, -25%);
+  }
+
+  .box-padding {
+    padding: 20px 45px 20px 45px;
+  }
+}
+
+/*FOR BIGGER SCREENS*/
+@media (min-width: 768px) {
+  .component-container {
+    margin: auto;
+    position: absolute;
+    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .small-box-1 {
+    border-bottom-left-radius: $BORDER-RADIUS;
+  }
+  .small-box-2 {
+    border-bottom-right-radius: $BORDER-RADIUS;
+    border-bottom-left-radius: 0;
+  }
+  .box-padding {
+    padding: 20px 40px 20px 40px;
+  }
+  .sign-up-button {
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  .line-break {
+    display: table;
+  }
+  button:hover {
+    background: $DARK-GREEN;
+    color: $LIGHT-GREY;
+  }
+  .normal-font-size {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+  p {
+    letter-spacing: 0.02em;
+  }
+  .sign-up-button {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
   }
 }
